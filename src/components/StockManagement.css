@@ -1,0 +1,122 @@
+.stock-management {
+  animation: fadeIn 0.5s;
+}
+
+.stock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+
+.filter-select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-badge.critical {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status-badge.warning {
+  background: #fed7aa;
+  color: #92400e;
+}
+
+.status-badge.normal {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.high {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-categorie {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  padding: 0.25rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.badge-categorie.A {
+  background: #dc2626;
+  color: white;
+}
+
+.badge-categorie.B {
+  background: #f59e0b;
+  color: white;
+}
+
+.badge-categorie.C {
+  background: #10b981;
+  color: white;
+}
+
+.btn-edit {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.stock-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.summary-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-top: 0.5rem;
+}
+
+.expiring {
+  color: #dc2626;
+  font-weight: 500;
+}

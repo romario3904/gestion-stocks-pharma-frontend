@@ -1,13 +1,534 @@
+/* Styles supplementaires pour les nouveaux composants */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #f1f5f9;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Badges statut */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-badge.success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.warning {
+  background: #fed7aa;
+  color: #92400e;
+}
+
+/* Bouton modifier */
+.btn-edit {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+/* Barre de progression */
+.progress-bar {
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100px;
+}
+
+.progress-fill {
+  background: var(--primary);
+  color: white;
+  font-size: 0.688rem;
+  padding: 0.125rem 0;
+  text-align: center;
+}
+
+/* Sections d'optimisation */
+.section-desc {
+  color: var(--text-light);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.critical-value {
+  color: var(--danger);
+  font-weight: bold;
+}
+
+.positive-value {
+  color: var(--success);
+  font-weight: bold;
+}
+
+.btn-small {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+/* Strategies flux tendu */
+.strategies-section {
+  margin-top: 2rem;
+}
+
+.strategies-section h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.strategies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.strategy-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  border-top: 3px solid var(--primary);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.strategy-card h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.strategy-card p {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin: 0.25rem 0;
+}
+
+.strategy-impact {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--success);
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+/* Alerte peremption */
+.peremption-alert {
+  background: #fffbeb;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.peremption-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.peremption-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.813rem;
+}
+
+.peremption-item .critical {
+  color: var(--danger);
+  font-weight: bold;
+}
+
+.info-note {
+  background: #eff6ff;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: var(--primary-dark);
+  margin-top: 0.75rem;
+}
+
+/* Benefices armoires */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.benefit-card {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.benefit-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.benefit-card h4 {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.benefit-card p {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+.benefit-card .stat {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* Recommendations deploiement */
+.recommendations-section {
+  margin-top: 1.5rem;
+}
+
+.recommendations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.rec-item {
+  display: flex;
+  gap: 0.75rem;
+  background: var(--light);
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.rec-number {
+  background: var(--primary);
+  color: white;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.rec-content h4 {
+  font-size: 0.813rem;
+  margin-bottom: 0.25rem;
+}
+
+.rec-content p {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* Centralisation achats */
+.info-banner {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  align-items: center;
+}
+
+.banner-icon {
+  font-size: 2rem;
+}
+
+.banner-content h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.banner-content p {
+  font-size: 0.813rem;
+  opacity: 0.9;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.medicaments-list {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.medicament-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.medicament-item:hover {
+  background: var(--light);
+}
+
+.medicament-item input {
+  margin-right: 0.75rem;
+}
+
+.med-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.med-detail {
+  font-size: 0.688rem;
+  color: var(--text-light);
+}
+
+.analyse-results {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+
+.result-detail {
+  font-size: 0.688rem;
+  color: var(--text-light);
+  margin-top: 0.25rem;
+}
+
+.medicaments-centralises {
+  margin: 1rem 0;
+}
+
+.med-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.med-tag {
+  background: var(--light);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.recommendations-cht {
+  background: #eff6ff;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.recommendations-cht ul {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.recommendations-cht li {
+  font-size: 0.75rem;
+  margin: 0.25rem 0;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+}
+
+.empty-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.risques-section {
+  margin-top: 1.5rem;
+  background: #fffbeb;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.risques-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.risque-card {
+  background: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--warning);
+}
+
+.risque-card h4 {
+  font-size: 0.813rem;
+  margin-bottom: 0.5rem;
+}
+
+.risque-card p {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.solution {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--success);
+  font-size: 0.688rem;
+}
+
+/* Filtres */
+.filters {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.813rem;
+}
+
+.filter-select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: white;
+  font-size: 0.813rem;
+}
+
+/* Badge categorie */
+.badge-categorie {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  padding: 0.125rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.badge-categorie.A {
+  background: var(--danger);
+  color: white;
+}
+
+.badge-categorie.B {
+  background: var(--warning);
+  color: white;
+}
+
+.badge-categorie.C {
+  background: var(--success);
+  color: white;
+}
+
+/* Expiration */
+.expiring {
+  color: var(--danger);
+  font-weight: 500;
+}
+
+/* Alertes penuries */
+.alert-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.btn-commander-urgence {
+  background: var(--danger);
+  color: white;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  flex: 1;
+}
+
+.btn-substitution {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  flex: 1;
+}
+
+.substitution-info {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.substitut-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--light);
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+.btn-valider {
+  background: var(--success);
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.688rem;
 }
