@@ -18,5 +18,10 @@
   ],
   "env": {
     "REACT_APP_API_URL": "https://pharma-backend.onrender.com/api"
+  },
+  "build": {
+    "env": {
+      "CI": "false"
+    }
   }
 }
